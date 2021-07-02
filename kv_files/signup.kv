@@ -1,0 +1,85 @@
+Screen:
+	
+	MDCard:
+		size_hint: None, None
+		size:300, 400
+		pos_hint: {"center_x":0.5, "center_y":0.5}
+		elevation:10
+		padding:25
+		spacing:25
+		orientation:'vertical'
+
+		MDLabel:
+			id: signup_label
+			text:"Sign Up"
+			font_size:40
+			halign:'center'
+			size_hint_y:None
+			height:self.texture_size[1]
+			padding_y:15
+
+		BoxLayout:
+			orientation:"horizontal"
+
+            Label:
+                text: "Username"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.4, "top":0.8}
+                font_size: 15
+
+            TextInput:
+                pos_hint: {"x":0.1, "top":0.95}
+                size_hint: 0.9, 0.98
+                id: name
+                multiline: False
+
+        BoxLayout:
+			orientation:"horizontal"
+
+            Label:
+                text: "Email"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.5, "top":1.4}
+                font_size: 15
+
+            TextInput:
+                pos_hint: {"x":0.1, "top":1.6}
+                size_hint: 0.9, 0.98
+                id: email
+                multiline: False
+
+	    BoxLayout:
+			orientation:"horizontal"
+
+            Label:
+                text: "Mobile"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.5, "top":2}
+                font_size: 15
+
+            TextInput:
+                pos_hint: {"x":0.1, "top":2.2}
+                size_hint: 0.9, 0.98
+                id: mobile
+                multiline: False
+
+        BoxLayout:
+			orientation:"horizontal"
+
+            Label:
+                text: "Password"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.5, "top":2.6}
+                font_size: 15
+
+            TextInput:
+                pos_hint: {"x":0.1, "top":2.8}
+                size_hint: 0.9, 0.98
+                id: password
+                multiline: False
+
+        MDRoundFlatButton:
+			text:"Create"
+			font_size:12
+			pos_hint:{"center_x":0.5}
+			on_press:app.save()
