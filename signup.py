@@ -11,14 +11,8 @@ class SignupApp(MDApp):
         return Builder.load_file('kv_files/signup.kv')
 
     def save(self):
-        self.root.ids.signup_label.text = f'Sup {self.root.ids.name.text}!'
+        self.root.ids.signup_label.text = "User Created"
 
-    def clear(self):
-        pass
-        # self.root.ids.welcome_label.text = "WELCOME"
-        # self.root.ids.user.text = ""
-        # self.root.ids.password.text = ""
- 
- 
+    
 if __name__ == "__main__":
     SignupApp().run()
