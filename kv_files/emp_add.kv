@@ -1,0 +1,152 @@
+Screen:
+	
+	MDCard:
+		size_hint: None, None
+		size:500, 500
+		pos_hint: {"center_x":0.5, "center_y":0.5}
+		elevation:10
+		padding:25
+		spacing:25
+		orientation:'vertical'
+
+		MDLabel:
+			id: add_label
+			text:"Add Employee"
+			font_size:40
+			halign:'center'
+			size_hint_y:None
+			height:self.texture_size[1]
+			padding_y:15
+
+		BoxLayout:
+			orientation:"horizontal"
+
+            Label:
+                text: "Name"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.4, "top":0.8}
+                font_size: 15
+
+            TextInput:
+                pos_hint: {"x":0.1, "top":0.95}
+                size_hint: 0.9, 1.50
+                id: name
+                multiline: False
+
+        BoxLayout:
+			orientation:"horizontal"
+
+            Label:
+                text: "Email"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.5, "top":1.4}
+                font_size: 15
+
+            TextInput:
+                pos_hint: {"x":0.1, "top":1.6}
+                size_hint: 0.9, 1.50
+                id: email
+                multiline: False
+
+	    BoxLayout:
+			orientation:"horizontal"
+
+            Label:
+                text: "Mobile"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.5, "top":2}
+                font_size: 15
+
+            TextInput:
+                pos_hint: {"x":0.1, "top":2.2}
+                size_hint: 0.9, 1.50
+                id: mobile
+                multiline: False
+
+        BoxLayout:
+			orientation:"horizontal"
+
+            Label:
+                text: "Age"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.5, "top":2.6}
+                font_size: 15
+
+            TextInput:
+                pos_hint: {"x":0.1, "top":2.8}
+                size_hint: 0.9, 1.50
+                id: age
+                multiline: False
+
+
+        BoxLayout:
+            orientation:"horizontal"
+
+            Label:
+                text: "Address"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.5, "top":3.2}
+                font_size: 15
+
+            TextInput:
+                pos_hint: {"x":0.1, "top":3.4}
+                size_hint: 0.9, 1.50
+                id: address
+                multiline: False
+
+        BoxLayout:
+            orientation:"horizontal"
+
+            Label:
+                text: "Gender"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.5, "top":3}
+                font_size: 15
+
+            GridLayout:
+                cols: 2
+                pos_hint: {"x":0.3, "top":3.8}
+                size_hint: 0.9, 1.50
+                padding : 5,5
+                spacing : 15,15
+                row_default_height: '10dp'
+
+                Label:
+                    text: 'Male'
+                    text_size: self.size
+                    valign: 'middle'
+
+                CheckBox:
+                    group: 'check'
+                    id : chk_male
+
+                Label:
+                    text: 'Female'
+                    text_size: self.size
+                    valign: 'middle'
+
+                CheckBox:
+                    group: 'check'
+                    id: chk_female
+
+
+        BoxLayout:
+            orientation:"horizontal"
+
+            Label:
+                text: "Date"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.5, "top":3}
+                font_size: 15
+
+            TextInput:
+                pos_hint: {"x":0.1, "top":3.2}
+                size_hint: 0.9, 1.50
+                id: date
+                multiline: False
+
+        MDRoundFlatButton:
+			text:"Create"
+			font_size:12
+			pos_hint:{"center_x":0.5}
+			on_press:app.save()
