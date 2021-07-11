@@ -19,7 +19,8 @@ class ShowApp(MDApp):
 	        all_data.append(row)
 
         conn.close()
-        print(all_data)
+        # print([list(x) + ['+'] for x in all_data])
+
 
         screen = Screen()
         table = MDDataTable(
@@ -29,7 +30,7 @@ class ShowApp(MDApp):
             use_pagination = True,
             rows_num = 3,
             pagination_menu_height = '240dp',
-            pagination_menu_pos = 'auto',
+            pagination_menu_pos = 'auto',		# or center
         	column_data = [
         	("Sr No.", dp(19)),
         	("Name", dp(19)),
